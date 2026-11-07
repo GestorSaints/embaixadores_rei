@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ambiente de apoio ao instrutor de Ordem Unida, baseado no Manual EB70-MC-10.308, 4ª edição, 2019.">
+<title>Ordem Unida | Guia do Instrutor</title>
+<style>
+:root{
+  --bg:#f3f5f2;--paper:#fff;--ink:#1c2822;--muted:#68756d;--line:#dce3dc;
+  --green:#244b39;--green2:#35664d;--gold:#b58b45;--soft:#eaf0eb;
+  --shadow:0 12px 32px rgba(25,45,32,.08);--radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:linear-gradient(125deg,#183729,#315c43);color:#fff;padding:34px 22px 30px}
+.top{max-width:1180px;margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:#d4dfd6;font-weight:700}
+h1{font-size:clamp(2rem,5vw,3.35rem);line-height:1.08;margin:10px 0}
+header p{max-width:720px;color:#e4ece5;margin:12px 0 0}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.meta span{border:1px solid #ffffff45;border-radius:999px;padding:5px 12px;font-size:.82rem;color:#f2f6f2}
+.layout{max-width:1180px;margin:26px auto;padding:0 18px;display:grid;grid-template-columns:270px minmax(0,1fr);gap:22px}
+aside{align-self:start;position:sticky;top:16px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+aside h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 12px}
+nav a{display:block;text-decoration:none;color:var(--ink);padding:9px 11px;border-radius:10px;font-size:.92rem}
+nav a:hover,nav a.active{background:var(--soft);color:var(--green);font-weight:700}
+.tools{margin-top:18px;border-top:1px solid var(--line);padding-top:16px}
+button,.btn{border:0;border-radius:10px;background:var(--green);color:#fff;padding:10px 13px;font:inherit;font-weight:650;cursor:pointer}
+button:hover,.btn:hover{background:var(--green2)}
+button.secondary{background:var(--soft);color:var(--green)}
+button.secondary:hover{background:#dce8df}
+main{min-width:0}
+.searchbar{display:flex;gap:10px;margin-bottom:18px}
+.searchbar input{flex:1;min-width:0;border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 14px;font:inherit}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:18px;box-shadow:var(--shadow);scroll-margin-top:18px}
+.kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:.13em;color:var(--gold);font-weight:800}
+h2{font-size:1.55rem;line-height:1.25;margin:5px 0 12px;color:var(--green)}
+h3{font-size:1.08rem;color:var(--green);margin:22px 0 7px}
+p{margin:8px 0}
+.lead{font-size:1.08rem;color:#405047}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.tile{background:#f7f9f7;border:1px solid var(--line);border-radius:13px;padding:15px}
+.tile strong{display:block;color:var(--green);margin-bottom:4px}
+.callout{border-left:4px solid var(--gold);background:#faf7ef;padding:13px 16px;border-radius:0 12px 12px 0;margin:15px 0}
+ul{padding-left:22px}
+li{margin:5px 0}
+details{border:1px solid var(--line);border-radius:12px;margin:10px 0;background:#fff}
+summary{cursor:pointer;padding:12px 15px;color:var(--green);font-weight:700}
+details .inside{padding:0 15px 14px}
+.tag{display:inline-block;background:var(--soft);color:var(--green);padding:3px 9px;border-radius:999px;font-size:.78rem;font-weight:700;margin:3px 4px 3px 0}
+.checklist label{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid #edf1ed}
+.checklist input{margin-top:6px;accent-color:var(--green)}
+.progress{height:8px;background:#e7ece7;border-radius:20px;overflow:hidden;margin:12px 0}
+.progress div{height:100%;width:0;background:var(--green2);transition:width .2s}
+.small{font-size:.88rem;color:var(--muted)}
+footer{max-width:1180px;margin:0 auto 35px;padding:0 18px;color:var(--muted);font-size:.86rem}
+.hidden{display:none!important}
+mark{background:#f8e7b9;padding:0 2px}
+@media(max-width:850px){.layout{grid-template-columns:1fr}aside{position:static}.grid{grid-template-columns:1fr}}
+@media print{body{background:#fff}.layout{display:block;margin:0;max-width:none}aside,.searchbar,.tools,button{display:none!important}.card{box-shadow:none;break-inside:avoid;border:1px solid #bbb}header{background:#fff;color:#000;padding:15px 0}header p,.eyebrow,.meta span{color:#333}.meta span{border-color:#aaa}footer{margin-top:20px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="top">
+  <div class="eyebrow">Ambiente de apoio didático • Ordem Unida</div>
+  <h1>Guia do Instrutor</h1>
+  <p>Material de consulta e planejamento para aulas de Ordem Unida. Organizado a partir dos capítulos I, III e IV do Manual de Campanha EB70-MC-10.308.</p>
+  <div class="meta"><span>Exército Brasileiro</span><span>4ª edição • 2019</span><span>Versão de estudo</span></div>
+ </div>
+</header>
+
+<div class="layout">
+<aside>
+ <h2>Navegação</h2>
+ <nav id="nav">
+  <a href="#inicio" class="active">Visão geral</a>
+  <a href="#cap1">Capítulo I — Introdução</a>
+  <a href="#cap3">Capítulo III — Instrução individual com arma</a>
+  <a href="#cap4">Capítulo IV — Instrução coletiva</a>
+  <a href="#planejamento">Planejamento da instrução</a>
+  <a href="#checagem">Verificação do instrutor</a>
+  <a href="#referencia">Referência e limites</a>
+ </nav>
+ <div class="tools">
+  <button class="secondary" onclick="window.print()">Imprimir / salvar PDF</button>
+  <p class="small">Dica: use a busca para localizar termos dentro desta página.</p>
+ </div>
+</aside>
+
+<main>
+ <div class="searchbar">
+  <input id="search" type="search" placeholder="Buscar: disciplina, formação, formatura..." aria-label="Buscar conteúdo">
+  <button class="secondary" onclick="clearSearch()">Limpar</button>
+ </div>
+
+ <section class="card" id="inicio">
+  <div class="kicker">Apresentação</div>
+  <h2>Como utilizar este guia</h2>
+  <p class="lead">Uma estrutura de apoio ao instrutor: contextualização, organização dos assuntos, preparação da aula e conferência dos pontos essenciais.</p>
+  <div class="grid">
+   <div class="tile"><strong>Capítulo I</strong><span>Fundamentos, objetivos, disciplina, chefia, definições e meios de comando.</span></div>
+   <div class="tile"><strong>Capítulo III</strong><span>Enquadramento da instrução individual com arma e cuidados gerais previstos no manual.</span></div>
+   <div class="tile"><strong>Capítulo IV</strong><span>Organização coletiva: formações, formatura, deslocamentos e assuntos específicos.</span></div>
+   <div class="tile"><strong>Uso didático</strong><span>Registre objetivos, sequência, observações e avaliação de cada sessão.</span></div>
+  </div>
+  <div class="callout"><strong>Importante:</strong> este site é um roteiro de estudo em linguagem resumida. Não substitui o manual oficial, as normas vigentes, a supervisão de instrutor habilitado nem as regras de segurança da organização responsável.</div>
+ </section>
+
+ <section class="card" id="cap1">
+  <div class="kicker">Capítulo I</div>
+  <h2>Introdução</h2>
+  <p class="lead">O capítulo apresenta a finalidade da Ordem Unida, seus objetivos formativos e os conceitos necessários para compreender a organização de uma tropa.</p>
+
+  <h3>1.1 — Finalidade</h3>
+  <p>O manual estabelece e padroniza a execução dos exercícios de Ordem Unida, considerando os objetivos próprios desse ramo da instrução militar.</p>
+  <h3>1.2 — Conceito básico</h3>
+  <p>A Ordem Unida envolve disposição individual consciente e motivada para alcançar padrões coletivos de uniformidade, sincronização e garbo militar. O manual a relaciona à manifestação externa da disciplina e à obediência voluntária em função da eficiência do conjunto.</p>
+  <h3>1.3 — Objetivos</h3>
+  <ul>
+   <li>Permitir que militares e organizações se apresentem e se desloquem ordenadamente em situações não relacionadas ao combate.</li>
+   <li>Desenvolver coesão e reflexos de obediência.</li>
+   <li>Constituir uma escola de disciplina.</li>
+   <li>Exercitar oficiais e graduados no comando de tropa.</li>
+   <li>Favorecer uma apresentação pública enérgica e marcial.</li>
+  </ul>
+  <h3>1.4 — Divisão da instrução</h3>
+  <div class="grid">
+   <div class="tile"><strong>Instrução individual</strong>Prática dos movimentos individuais, preparando o militar para integrar os exercícios coletivos.</div>
+   <div class="tile"><strong>Instrução coletiva</strong>Instrução ministrada à fração, subunidade ou unidade, conforme planejamento específico.</div>
+  </div>
+  <h3>1.5 — Disciplina</h3>
+  <p>O manual apresenta a disciplina como fundamento da força militar: ordem e obediência desenvolvidas por educação apropriada. Destaca a obediência pronta, inteligente, espontânea e consciente da missão do conjunto.</p>
+  <h3>1.6 — Ordem Unida e chefia</h3>
+  <p>A prática oferece ao comandante oportunidades de desenvolver autoconfiança, responsabilidade, atenção aos detalhes, capacidade de observação e estímulo à tropa. O manual associa a atividade a quatro indicadores:</p>
+  <div class="grid">
+   <div class="tile"><strong>Moral</strong>Superação de dificuldades e determinação para cumprir os comandos.</div>
+   <div class="tile"><strong>Disciplina</strong>Prontidão e atenção na execução das ordens.</div>
+   <div class="tile"><strong>Espírito de corpo</strong>Boa apresentação coletiva e uniformidade.</div>
+   <div class="tile"><strong>Proficiência</strong>Manutenção da exatidão na execução.</div>
+  </div>
+  <h3>1.7 — Definições básicas</h3>
+  <p>Os termos abaixo ajudam o instrutor a descrever a disposição da tropa com precisão. As definições foram condensadas para consulta rápida.</p>
+  <div class="grid">
+   <div class="tile"><strong>Coluna</strong>Elementos dispostos uns atrás dos outros.</div>
+   <div class="tile"><strong>Coluna por um</strong>Uma sequência de elementos, mantendo a distância regulamentar.</div>
+   <div class="tile"><strong>Distância</strong>Espaço entre elementos posicionados um atrás do outro.</div>
+   <div class="tile"><strong>Intervalo</strong>Espaço lateral entre elementos na mesma fileira ou entre frações/unidades.</div>
+   <div class="tile"><strong>Fileira</strong>Elementos lado a lado, na mesma linha e voltados para a mesma frente.</div>
+   <div class="tile"><strong>Linha</strong>Disposição lado a lado, cuja frente é maior que a profundidade.</div>
+   <div class="tile"><strong>Alinhamento</strong>Elementos lado a lado, em linha reta e voltados para a mesma frente.</div>
+   <div class="tile"><strong>Cobertura</strong>Elementos voltados para a mesma frente, um exatamente atrás do outro.</div>
+   <div class="tile"><strong>Cerra-fila</strong>Graduado à retaguarda, responsável por acompanhar correção da marcha, movimentos, lugares e disciplina.</div>
+   <div class="tile"><strong>Militar-base</strong>Referência pela qual a tropa regula marcha, cobertura e alinhamento.</div>
+   <div class="tile"><strong>Unidade-base</strong>Unidade usada como referência para marcha ou alinhamento das demais.</div>
+   <div class="tile"><strong>Testa / cauda</strong>Primeiro / último elemento de uma coluna.</div>
+   <div class="tile"><strong>Frente / profundidade</strong>Largura ocupada pela tropa em linha / espaço entre testa e cauda.</div>
+   <div class="tile"><strong>Centro / direita / esquerda</strong>Referências de posição na frente da formação.</div>
+  </div>
+  <h3>1.8 — Comandos e meios de comando</h3>
+  <p>O manual prevê a transmissão da vontade do comandante por voz, gestos, corneta ou clarim e apito.</p>
+  <details><summary>Vozes de comando — estrutura geral</summary><div class="inside">
+   <p><strong>Advertência:</strong> alerta a tropa para o comando que será enunciado.</p>
+   <p><strong>Comando propriamente dito:</strong> indica o movimento a realizar.</p>
+   <p><strong>Execução:</strong> determina o momento exato de iniciar ou cessar o movimento.</p>
+   <p>As vozes devem ser claras, enérgicas, padronizadas e proporcionais ao efetivo. O comandante deve estar em posição e local que permitam ser visto e ouvido.</p>
+  </div></details>
+  <details><summary>Gestos, corneta/clarim e apito</summary><div class="inside">
+   <p>Os gestos substituem a voz quando distância, ruído ou outras circunstâncias impedem a comunicação oral. O manual também prevê toques de corneta/clarim e sinais de apito, com convenções próprias.</p>
+   <p>Para ensinar sinais específicos, consulte as figuras e descrições correspondentes no capítulo I do manual oficial.</p>
+  </div></details>
+  <h3>1.9 — Execução por tempos</h3>
+  <p>Para treinamento, os movimentos podem ser divididos em tempos sucessivos. A instrução por tempos é identificada por advertência própria; o retorno à execução contínua é indicado por comando específico.</p>
+  <h3>1.10 — Métodos e processos de instrução</h3>
+  <ul>
+   <li>Começar pelo ensino individual, com acompanhamento do instrutor ou monitor.</li>
+   <li>Iniciar a instrução coletiva quando houver desembaraço na execução individual.</li>
+   <li>Progredir do simples para o complexo.</li>
+   <li>Realizar sessões metódicas, precisas, frequentes e de curta duração.</li>
+   <li>Manter a motivação e escolher local que não prejudique a audição dos comandos.</li>
+  </ul>
+ </section>
+
+ <section class="card" id="cap3">
+  <div class="kicker">Capítulo III</div>
+  <h2>Instrução individual com arma</h2>
+  <p class="lead">Este capítulo trata da passagem da instrução sem arma para a instrução individual com arma e organiza os assuntos por tipos de armamento e equipamentos.</p>
+  <h3>3.1 — Considerações gerais</h3>
+  <ul>
+   <li>A instrução com arma é iniciada quando forem alcançados os objetivos da Ordem Unida sem arma; o manual admite que as duas instruções sejam alternadas.</li>
+   <li>Em atividades como treinamentos, revistas e desfiles, armamentos coletivos normalmente são conduzidos nos meios de transporte orgânicos, e não a braço.</li>
+   <li>O manual estabelece posições iniciais de entrada em forma para os militares portando os armamentos e equipamentos abrangidos pelo capítulo.</li>
+   <li>As armas de fogo devem ser conduzidas descarregadas e desengatilhadas; eventual condição diferente depende de ordem específica e das cautelas previstas no manual.</li>
+   <li>O uso e o ajuste de bandoleiras são tratados conforme o modelo de armamento.</li>
+  </ul>
+  <div class="callout"><strong>Segurança em primeiro lugar:</strong> este guia não ensina manipulação, montagem, carregamento, emprego ou manejo de armas. Qualquer instrução prática com armamento deve ocorrer somente em ambiente autorizado, sob supervisão habilitada e com observância integral das normas de segurança e do manual oficial.</div>
+  <h3>3.2 a 3.11 — Organização dos assuntos</h3>
+  <p>O índice do manual distribui o capítulo nos seguintes blocos:</p>
+  <div class="grid">
+   <div class="tile"><strong>3.2</strong>Fuzil 7,62 M 964 FAL</div>
+   <div class="tile"><strong>3.3</strong>Fuzil 7,62 M 964 A1 PARAFAL</div>
+   <div class="tile"><strong>3.4</strong>Fuzil 5,56 IA2</div>
+   <div class="tile"><strong>3.5</strong>Mosquetão 7,62 M 968</div>
+   <div class="tile"><strong>3.6</strong>Pistola</div>
+   <div class="tile"><strong>3.7</strong>Metralhadora M9 M972 (Beretta)</div>
+   <div class="tile"><strong>3.8</strong>Espada</div>
+   <div class="tile"><strong>3.9</strong>Espadim (AMAN)</div>
+   <div class="tile"><strong>3.10</strong>Ordem Unida com lança</div>
+   <div class="tile"><strong>3.11</strong>Tonfa</div>
+  </div>
+  <h3>Orientação didática ao instrutor</h3>
+  <p>Use esta seção para identificar qual parte do capítulo será objeto da aula. Antes da atividade prática, confira a edição vigente do manual, o modelo exato de equipamento, a autorização institucional e os procedimentos de segurança aplicáveis. Não misture instruções de modelos diferentes.</p>
+ </section>
+
+ <section class="card" id="cap4">
+  <div class="kicker">Capítulo IV</div>
+  <h2>Instrução coletiva</h2>
+  <p class="lead">O capítulo regula a execução coletiva dos exercícios previstos nos capítulos anteriores por grupos considerados aptos na instrução individual e apresenta procedimentos próprios da prática coletiva.</p>
+  <h3>4.1 — Generalidades</h3>
+  <p>O foco é a passagem do desempenho individual para a execução coordenada por grupos, frações, subunidades ou unidades.</p>
+  <h3>4.2 — Formações</h3>
+  <p>As formações dependem principalmente do efetivo e da organização da tropa. O manual apresenta duas formações fundamentais: coluna e linha.</p>
+  <div class="grid">
+   <div class="tile"><strong>Formação em coluna</strong>Elementos organizados em profundidade, um atrás do outro ou em várias colunas justapostas.</div>
+   <div class="tile"><strong>Formação em linha</strong>Elementos dispostos lado a lado, com a frente da tropa predominando sobre a profundidade.</div>
+  </div>
+  <p>O capítulo também discrimina formações em coluna por diferentes quantidades, coluna de frações e coluna dupla de frações. Consulte as figuras do manual para visualizar cada dispositivo.</p>
+  <h3>4.3 — Formatura</h3>
+  <p>Assunto dedicado à organização da tropa em forma para a execução coletiva. O instrutor deve trabalhar a disposição prevista, a referência da formação e a uniformidade do conjunto, conferindo os comandos e procedimentos no texto oficial.</p>
+  <h3>4.4 — Deslocamentos</h3>
+  <p>Reúne os procedimentos de movimentação da tropa formada. A preparação deve considerar a formação adotada, a direção, a coordenação entre os elementos e a padronização dos comandos, conforme o manual.</p>
+  <h3>4.5 — Ordem Unida sem comando</h3>
+  <p>Seção específica do capítulo coletivo. Para sua aplicação, o instrutor deve estudar a sequência e as condições descritas no manual, evitando improvisar procedimentos.</p>
+  <h3>4.6 — Bandeiras e estandartes</h3>
+  <p>Trata da participação de bandeiras e estandartes na Ordem Unida. A aula deve recorrer às prescrições e ilustrações próprias da seção.</p>
+  <h3>4.7 — Tropas de choque a pé</h3>
+  <p>O manual reserva uma seção às formações e procedimentos de tropas de choque a pé. O conteúdo prático deve ser conduzido exclusivamente por pessoal habilitado, dentro das regras institucionais e legais aplicáveis.</p>
+  <h3>4.8 e 4.9 — Bandas, fanfarras e banda marcial</h3>
+  <p>O capítulo contempla bandas de música, fanfarras e banda marcial, além de uma seção própria sobre Ordem Unida para banda.</p>
+  <h3>4.10 — Posição de Sentido e Descansar para o regente/mestre</h3>
+  <p>Seção dedicada às posições do regente ou mestre no contexto da banda. Consulte a descrição e as figuras correspondentes no manual para ensinar os detalhes.</p>
+  <div class="callout"><strong>Nota de fidelidade:</strong> nesta página, as seções 4.3 a 4.10 estão apresentadas como mapa de conteúdo e orientação de estudo. Para comandos, distâncias, tempos, posições e sequências exatas, utilize o texto e as figuras do manual original.</div>
+ </section>
+
+ <section class="card" id="planejamento">
+  <div class="kicker">Ferramenta de trabalho</div>
+  <h2>Planejamento de uma sessão</h2>
+  <p>Preencha os campos para estruturar uma aula. As informações permanecem apenas nesta página enquanto ela estiver aberta.</p>
+  <div class="grid">
+   <div class="tile"><label for="tema"><strong>Tema da instrução</strong></label><input id="tema" style="width:100%;padding:9px;border:1px solid var(--line);border-radius:8px" placeholder="Ex.: formações em coluna"></div>
+   <div class="tile"><label for="duracao"><strong>Duração prevista</strong></label><input id="duracao" style="width:100%;padding:9px;border:1px solid var(--line);border-radius:8px" placeholder="Ex.: 30 minutos"></div>
+   <div class="tile"><label for="objetivo"><strong>Objetivo da sessão</strong></label><textarea id="objetivo" rows="3" style="width:100%;padding:9px;border:1px solid var(--line);border-radius:8px" placeholder="Ao final da sessão, o instruendo deverá..."></textarea></div>
+   <div class="tile"><label for="observacoes"><strong>Observações do instrutor</strong></label><textarea id="observacoes" rows="3" style="width:100%;padding:9px;border:1px solid var(--line);border-radius:8px" placeholder="Pontos de atenção, dificuldades e ajustes..."></textarea></div>
+  </div>
+  <button onclick="printPlan()">Imprimir planejamento</button>
+ </section>
+
+ <section class="card" id="checagem">
+  <div class="kicker">Conferência</div>
+  <h2>Verificação do instrutor</h2>
+  <p class="small">Marque os itens concluídos antes de encerrar a preparação.</p>
+  <div class="progress"><div id="bar"></div></div>
+  <p id="count" class="small">0 de 7 itens concluídos</p>
+  <div class="checklist" id="checks">
+   <label><input type="checkbox"> Defini o objetivo e o assunto da sessão.</label>
+   <label><input type="checkbox"> Consultei a seção correspondente do manual oficial.</label>
+   <label><input type="checkbox"> Confirmei que os instruendos possuem a preparação prévia necessária.</label>
+   <label><input type="checkbox"> Escolhi local adequado e com condições de comunicação.</label>
+   <label><input type="checkbox"> Planejei progressão didática e tempo de prática.</label>
+   <label><input type="checkbox"> Verifiquei os meios, equipamentos e condições de segurança aplicáveis.</label>
+   <label><input type="checkbox"> Previ observação, correção e avaliação da execução.</label>
+  </div>
+ </section>
+
+ <section class="card" id="referencia">
+  <div class="kicker">Fonte de referência</div>
+  <h2>Manual utilizado</h2>
+  <p><strong>BRASIL. Exército Brasileiro. Comando de Operações Terrestres.</strong> <em>Manual de Campanha EB70-MC-10.308 — Ordem Unida.</em> 4ª edição. 2019.</p>
+  <p class="small">Este material é uma síntese didática independente, preparada para consulta em navegador. Não é publicação oficial do Exército Brasileiro e não reproduz integralmente o manual. A numeração das seções acompanha a estrutura do documento de referência; a paginação, figuras e prescrições detalhadas devem ser conferidas no PDF original.</p>
+ </section>
+</main>
+</div>
+<footer>Guia do Instrutor • Ordem Unida • Material de apoio para estudo e preparação de aulas.</footer>
+<script>
+const search=document.getElementById('search');
+const sections=[...document.querySelectorAll('main .card')];
+search.addEventListener('input',()=>{
+ const q=search.value.trim().toLocaleLowerCase('pt-BR');
+ sections.forEach(sec=>{
+  if(!q){sec.classList.remove('hidden');return}
+  sec.classList.toggle('hidden',!sec.innerText.toLocaleLowerCase('pt-BR').includes(q));
+ });
+});
+function clearSearch(){search.value='';search.dispatchEvent(new Event('input'));search.focus()}
+const boxes=[...document.querySelectorAll('#checks input')];
+function updateProgress(){
+ const n=boxes.filter(x=>x.checked).length;
+ document.getElementById('bar').style.width=(n/boxes.length*100)+'%';
+ document.getElementById('count').textContent=`${n} de ${boxes.length} itens concluídos`;
+}
+boxes.forEach(x=>x.addEventListener('change',updateProgress));
+function printPlan(){
+ const vals=['tema','duracao','objetivo','observacoes'].map(id=>[id,document.getElementById(id).value]);
+ const w=window.open('','_blank');
+ if(!w){window.print();return}
+ w.document.write('<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>Planejamento da instrução</title><style>body{font:16px/1.6 Arial;padding:35px;color:#222}h1{color:#244b39}h2{font-size:16px;margin-top:22px}div{white-space:pre-wrap;border-bottom:1px solid #ddd;padding:8px 0}</style><h1>Planejamento da instrução</h1>');
+ const labels={tema:'Tema',duracao:'Duração',objetivo:'Objetivo',observacoes:'Observações'};
+ vals.forEach(([id,v])=>w.document.write('<h2>'+labels[id]+'</h2><div>'+escapeHtml(v||'—')+'</div>'));
+ w.document.write('<p>Referência: EB70-MC-10.308 — Ordem Unida, 4ª edição, 2019.</p></html>');
+ w.document.close();w.focus();w.print();
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+const links=[...document.querySelectorAll('#nav a')];
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id))}});
+},{rootMargin:'-20% 0px -70% 0px'});
+document.querySelectorAll('main .card[id]').forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>
